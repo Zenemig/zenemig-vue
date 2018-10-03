@@ -1,4 +1,4 @@
-# zenemig
+# Zenemig.net
 
 ## Project setup
 ```
