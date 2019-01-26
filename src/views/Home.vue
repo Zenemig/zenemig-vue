@@ -1,84 +1,5 @@
 <template>
-  <div>
-    <nav id="nav-mobile">
-      <img
-        src="../assets/logo_zenemig.svg"
-        class="nav-mobile-logo"
-        alt="Zenemig Logo"
-        title="Zenemig Logo">
-      <font-awesome-icon :icon="['fab', 'twitter']" @click="toggleTwitterSidebar" />
-      <font-awesome-icon class="nav-mobile-icn-menu" :icon="['fal', 'bars']" @click="toggleMenuSidebar" />
-    </nav>
-
-    <button class="btn-twitter-feed"  @click="toggleTwitterSidebar">
-      <font-awesome-icon :icon="['fab', 'twitter']" />
-      <font-awesome-icon :icon="['fal', 'times-circle']" />
-    </button>
-
-    <aside
-      id="sidebar-menu"
-      class="sidebar left sidebar-menu"
-      :class="{'active': showMenuSidebar}">
-      <font-awesome-icon
-        class="hidden-desktop"
-        :icon="['fal', 'times-circle']"
-         @click="toggleMenuSidebar" />
-
-      <div class="sidebar-logo">
-        <img
-          src="../assets/logo_zenemig.svg"
-          class="nav-mobile-logo"
-          alt="Zenemig Logo"
-          title="Zenemig Logo">
-      </div>
-
-      <div class="sidebar-social">
-        <a href="http://github.com/zenemig">
-          <font-awesome-icon :icon="['fab', 'github']" />
-        </a>
-        <a href="http://medium.com/@zenemig">
-          <font-awesome-icon :icon="['fab', 'medium']" />
-        </a>
-        <a href="http://linkedin.com/in/zenemig">
-          <font-awesome-icon :icon="['fab', 'linkedin']" />
-        </a>
-      </div>
-
-      <div class="sidebar-work">
-        <h3 class="sidebar-work-position">
-          UI Engineer
-        </h3>
-
-        <a
-          class="sidebar-work-company"
-          href="http://ubiome.com">
-          uBiome
-        </a>
-      </div>
-
-      <div class="sidebar-blog">
-        <h3 class="sidebar-blog-post">
-          <a href="http://www.blog.zenemig.net/2014/11/21/a-veces-tus-palabras-suenan-mejor-dichas-por-otros/">
-            A veces tus palabras suenan mejor dichas por otros
-          </a>
-        </h3>
-        <a
-          class="sidebar-blog-title"
-          href="http://blog.zenemig.net">
-          Zenblog
-        </a>
-      </div>
-
-      <div class="sidebar-contact">
-        <button class="btn btn-text btn-contacto" @click="toggleContactSidebar">Contáctame</button>
-      </div>
-
-      <div class="sidebar-footer">
-        Hecho con <font-awesome-icon :icon="['fal', 'heart']" /> y <a href="https://vuejs.org/"><font-awesome-icon :icon="['fab', 'vuejs']" /></a>
-      </div>
-    </aside>
-
-    <section
+  <section
       id="content"
       class="content">
       <h1 class="headline intro">
@@ -252,71 +173,22 @@
         Hecho con <i class="fa fa-heart"/> y <a href="http://wordpress.org"><i class="fa fa-wordpress"/></a>
       </footer>
     </section>
-
-    <aside
-      id="sidebar-twitter"
-      class="sidebar right sidebar-twitter"
-      :class="{'active': showTwitterSidebar}">
-      <font-awesome-icon
-        class="hidden-desktop"
-        :icon="['fal', 'times-circle']"
-        @click="toggleTwitterSidebar" />
-      <h3 class="sidebar-twitter-title"><a href="http://twitter.com">@zenemig</a></h3>
-      <div id="sidebar-twitter-feed">
-        <a
-          class="twitter-timeline"
-          href="https://twitter.com/zenemig"
-          data-widget-id="504771579041943553"
-          width="320"
-          data-chrome="noborders noheader nofooter">Tweets by @zenemig</a>
-        <div class="tweet_footer"/>
-      </div>
-    </aside>
-
-    <aside
-      id="sidebar-contact"
-      class="sidebar right sidebar-contact"
-      :class="{'active': showContactSidebar}">
-      <font-awesome-icon
-        class="hidden-desktop"
-        :icon="['fal', 'times-circle']"
-        @click="toggleContactSidebar" />
-
-      <ul class="fa-ul">
-        <li>
-          <a href="tel:+56985006191">
-            <i class="fa fa-li fa-mobile"/> +56 9 85006191
-          </a>
-        </li>
-
-        <li>
-          <a href="mailto:hola@zenemig.net">
-            <i class="fa fa-li fa-envelope"/> hola@zenemig.net
-          </a>
-        </li>
-
-        <li>
-          <a href="http://twitter.com/zenemig">
-            <i class="fa fa-li fa-twitter"/> @zenemig
-          </a>
-        </li>
-
-        <li>
-          <i class="fa fa-li fa-telegram"/> +56 9 85006191
-        </li>
-
-        <li>
-          <i class="fa fa-li fa-skype"/> zenemig13
-        </li>
-      </ul>
-    </aside>
-  </div>
 </template>
 
 <script>
+import navbar from '@/components/navbar'
+import menuSidebar from '@/components/menu-sidebar'
+import twitterSidebar from '@/components/twitter-sidebar'
+import contactSidebar from '@/components/contact-sidebar'
 
 export default {
-  name: "Home",
+  name: 'Home',
+  components: {
+    navbar,
+    menuSidebar,
+    twitterSidebar,
+    contactSidebar
+  },
   data: () => {
     return {
       showMenuSidebar: false,
