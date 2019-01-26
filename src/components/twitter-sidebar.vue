@@ -1,12 +1,18 @@
 <template>
   <aside
-    id="sidebar-twitter"
-    class="sidebar right sidebar-twitter"
+    class="l-sidebar l-sidebar--right c-twitter-sidebar"
     :class="{'active': show}">
-    <font-awesome-icon
-      class="hidden-desktop"
-      :icon="['fal', 'times-circle']"
-      @click="toggleTwitterSidebar" />
+    <button class="l-sidebar__close" @click="toggleTwitterSidebar">
+      <font-awesome-icon
+        :icon="['fal', 'times-circle']"
+      />
+    </button>
+
+    <button class="c-twitter-sidebar__toggle-button"  @click="toggleTwitterSidebar">
+      <font-awesome-icon v-if="!show" :icon="['fab', 'twitter']" />
+      <font-awesome-icon v-else :icon="['fal', 'times']" />
+    </button>
+
     <h3 class="sidebar-twitter-title"><a href="http://twitter.com">@zenemig</a></h3>
     <div id="sidebar-twitter-feed">
       <a

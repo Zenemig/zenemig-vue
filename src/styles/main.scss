@@ -1,6 +1,7 @@
 @charset 'UTF-8';
 
 @import
+  'base/variables',
   'base/base',
   'base/colors',
   'base/typography',
@@ -18,11 +19,8 @@
   'elements/btn-twitter-feed';
 
 @import
-  'components/sidebar-logo',
-  'components/sidebar-social',
-  'components/sidebar-work',
-  'components/sidebar-blog',
-  'components/sidebar-footer',
+  'components/menu-sidebar',
+  'components/twitter-sidebar',
   'components/headline',
   'components/content-work',
   'components/footer-mobile';

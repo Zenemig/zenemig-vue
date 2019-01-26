@@ -9,14 +9,18 @@ import {
   faGithub,
   faLinkedin,
   faTwitter,
-  faHtml5
+  faHtml5,
+  faSkype
 } from '@fortawesome/free-brands-svg-icons'
 import {
   faHeart,
   faTimesCircle,
   faBars,
   faBriefcase,
-  faGlobeAmericas
+  faGlobeAmericas,
+  faMobile,
+  faEnvelope,
+  faTimes
 } from '@fortawesome/pro-light-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
@@ -26,11 +30,15 @@ library.add(faGithub)
 library.add(faLinkedin)
 library.add(faTwitter)
 library.add(faHtml5)
+library.add(faSkype)
 library.add(faHeart)
 library.add(faTimesCircle)
 library.add(faBars)
 library.add(faBriefcase)
 library.add(faGlobeAmericas)
+library.add(faMobile)
+library.add(faEnvelope)
+library.add(faTimes)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

@@ -1,0 +1,82 @@
+.c-menu-sidebar {
+  &__logo {
+    margin-bottom: $space-small;
+    width: 150px;
+  }
+  &__social {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: $space-big;
+    .social-icon {
+      padding: $space-smallest;
+      color: $red;
+      font-size: 20px;
+      transition: color 0.3s linear;
+      &.github {
+        &:hover {
+          color: $githubgray;
+        }
+      }
+      &.medium {
+        &:hover {
+          color: $mediumgreen;
+        }
+      }
+      &.linkedin {
+        &:hover {
+          color: $linkedinblue;
+        }
+      }
+    }
+  }
+  &__work {
+    display: block;
+    margin-bottom: $space-big;
+    .work__position {
+      margin-bottom: $space-smallest;
+      font-size: 20px;
+      color: $darkgray;
+    }
+    .work__company {
+      display: block;
+      font-size: 16px;
+    }
+  }
+  &__contact {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    .contact__item {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: $space-small;
+      width: 150px;
+      font-size: 14px;
+      .icon {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        margin-right: $space-small;
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+  &__footer {
+    display: block;
+    position: absolute;
+    bottom: $space-regular;
+    width: calc(100% - 30px);
+    color: $gray;
+    font-size: 12px;
+    > a, > a:hover {
+      color: $gray;
+    }
+  }
+}

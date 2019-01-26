@@ -1,0 +1,25 @@
+.c-twitter-sidebar {
+  &__toggle-button {
+    cursor: pointer;
+    position: absolute;
+    top: $space-regular;
+    left: -60px;
+    display: none;
+    border-radius: 50%;
+    border: none;
+    width: 30px;
+    height: 30px;
+    background-color: $twitterblue;
+    color: $white;
+    transition: background-color 0.3s linear;
+    &:hover {
+      background-color: $darktwitterblue;
+    }
+    @include media(lg) {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
