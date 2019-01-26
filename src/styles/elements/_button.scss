@@ -1,0 +1,33 @@
+@import '../base/colors';
+
+.btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px 15px;
+  background-color: $red;
+  color: $white;
+  transition: background-color 0.2s ease 0s, color 0.2s ease 0s;
+  &:hover {
+    background-color: $lightred;
+  }
+  &:focus {
+    outline: none;
+  }
+  &.btn-text {
+    background-color: transparent;
+    width: auto;
+    padding: 10px;
+    color: $red;
+    font-weight: bold;
+    &:hover {
+      color: $lightred;
+    }
+  }
+  &.btn-contacto {
+    padding: 0;
+    font-family: $font-handwritten;
+    font-size: 36px;
+  }
+}

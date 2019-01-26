@@ -1,0 +1,11 @@
+.sidebar-footer {
+  display: block;
+  position: absolute;
+  bottom: 15px;
+  width: calc(100% - 40px);
+  color: $gray;
+  font-size: 12px;
+  @media screen and (max-width: 380px) {
+    display: none;
+  }
+}

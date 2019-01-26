@@ -1,0 +1,43 @@
+.btn-twitter-feed {
+  z-index: 300;
+  cursor: pointer;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  margin: 0;
+  border: none;
+  background: none;
+  padding: 0;
+  transition: transform 0.3s ease-in-out 0s;
+  .fa-circle {
+    color: $twitterblue;
+    transition: color 0.2s ease 0s;
+  }
+  .fa-twitter, .fa-close {
+    color: $white;
+    transition: display 0.2s ease 0s;
+  }
+  .fa-close {
+    display: none;
+  }
+  &:hover {
+    .fa-circle {
+      color: $darktwitterblue;
+    }
+  }
+  &:focus {
+    outline: none;
+  }
+  &.active {
+    transform: translateX(-320px);
+    .fa-twitter {
+      display: none;
+    }
+    .fa-close {
+      display: block;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    display: none;
+  }
+}

@@ -1,0 +1,145 @@
+@import '../base/colors';
+
+.content-box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  .content-work-card {
+    position: relative;
+    margin: 0 auto 30px auto;
+    border-radius: 5px;
+    box-shadow: 0 0 25px -15px $black;
+    width: 100%;
+    max-width: 600px;
+    background-color: $lightergray;
+    text-align: left;
+    .content-work-card-img {
+      overflow: hidden;
+      position: relative;
+      border-radius: 5px 5px 0 0;
+      margin-bottom: 5px;
+      width: 100%;
+      height: 200px;
+      .overlay-black-medium {
+        position: absolute;
+        top: -200px;
+        transition: top 0.2s ease-in 0s;
+      }
+      .fa-stack {
+        display: block;
+        position: absolute;
+        top: -164px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: top 0.2s ease-in 0s;
+        .fa-circle {
+          color: $red;
+        }
+        .fa-html5, .fa-wordpress {
+          color: $white;
+        }
+      }
+      &:hover {
+        .overlay-black-medium {
+          top: 0;
+        }
+        .fa-stack {
+          top: 36px;
+        }
+      }
+      &.manetch {
+        background: url('assets/manetch.jpg') no-repeat center center;
+        background-size: cover;
+      }
+      &.volviendo-a-la-tierra {
+        background: url('assets/volviendo-a-la-tierra.jpg') no-repeat center center;
+        background-size: cover;
+      }
+      &.zenemig {
+        background: url('assets/zenemig.jpg') no-repeat center center;
+        background-size: cover;
+      }
+      &.resostenido {
+        background: url('assets/resostenido.png') no-repeat center center;
+        background-size: cover;
+      }
+      &.escapararte {
+        background: url('assets/escapararte.png') no-repeat center center;
+        background-size: cover;
+      }
+    }
+    .content-work-card-detail {
+      margin-bottom: 30px;
+      padding: 0 15px;
+      &:before {
+        content: '\f02c';
+        margin-right: 5px;
+        color: $red;
+        font-family: FontAwesome;
+        font-size: 12px;
+        line-height: 16px;
+      }
+      li {
+        display: inline-block;
+        margin-right: 5px;
+        border-right: 1px solid $gray;
+        padding-right: 5px;
+        font-size: 12px;
+        line-height: 12px;
+        text-align: center;
+        &:last-child {
+          border: none;
+        }
+      }
+    }
+    .content-work-card-title {
+      margin-bottom: 15px;
+      padding: 0 15px;
+    }
+    .content-work-card-text {
+      padding: 0 15px 15px 15px;
+      font-size: 16px;
+      line-height: 21px;
+    }
+    .content-work-card-footer {
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: stretch;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      .employer, .project-url {
+        flex-grow: 1;
+        width: 50%;
+        padding-bottom: 15px;
+        font-size: 12px;
+        i {
+          margin-right: 5px;
+          color: $darkred;
+        }
+      }
+      .employer {
+        padding-left: 15px;
+        text-align: left;
+      }
+      .project-url {
+        padding-right: 15px;
+        text-align: right;
+      }
+    }
+    @media screen and (min-width: 768px) {
+      width: calc(50% - 30px);
+      margin: 0 15px 30px 15px;
+    }
+    @media screen and (min-width: 1280px) {
+      width: calc(calc(100% / 3) - 30px);
+    }
+    @media screen and (min-width: 1600px) {
+      width: calc(25% - 30px);
+    }
+  }
+}

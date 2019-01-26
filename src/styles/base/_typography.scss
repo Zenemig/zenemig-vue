@@ -1,0 +1,61 @@
+@import 'colors';
+
+// Fonts
+$font-handwritten: 'Dancing Script', cursive;
+$font-title: 'Roboto Condensed', sans-serif;
+$font-body: 'Roboto', sans-serif;
+$font-display: 'Unica One', cursive;
+
+body {
+	font-family: $font-body;
+	font-size: 16px;
+  color: $darkgray;
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 10px 0;
+  color: $darkred;
+	font-family: $font-title;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 26px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+// Links
+a:link, a:visited {
+  color: $red;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.2s ease 0s;
+}
+
+a:hover {
+  color: $lightred;
+}
+
+a:active {
+  color: $lightred;
+}

@@ -1,0 +1,38 @@
+// Red
+$red                  : #c83737;
+$darkred              : darken($red, 20%);
+$lightred             : lighten($red, 20%);
+$redopdark            : rgba($red, 0.8);
+$redoplight           : rgba($red, 0.2);
+
+// Blue
+$twitterblue          : #55acee;
+$darktwitterblue      : darken($twitterblue, 20%);
+$lighttwitterblue     : lighten($twitterblue, 20%);
+$linkedinblue         : #0077b5;
+$darklinkedinblue     : darken($linkedinblue, 20%);
+$lightlinkedinblue    : lighten($linkedinblue, 20%);
+$githubblue           : #4078c0;
+
+// Green
+$mediumgreen          : #00ab6c;
+$darkmediumgreen      : darken($mediumgreen, 20%);
+$lightmediumgreen     : lighten($mediumgreen, 20%);
+
+// Black & White
+$black                : #000000;
+$blackopdark          : rgba($black, 0.8);
+$blackopmed           : rgba($black, 0.5);
+$blackoplight         : rgba($black, 0.2);
+$white                : #ffffff;
+$whiteopdark          : rgba($white, 0.8);
+$whiteoplight         : rgba($white, 0.2);
+
+// Gray
+$gray                 : #888888;
+$darkgray             : darken($gray, 30%);
+$lightgray            : lighten($gray, 30%);
+$lightergray          : lighten($gray, 43%);
+$githubgray           : #171516;
+$darkgithubgray       : darken($githubgray, 20%);
+$lightgithubgray      : lighten($githubgray, 20%);
