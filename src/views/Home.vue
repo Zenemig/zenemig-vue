@@ -10,7 +10,7 @@
       <font-awesome-icon class="nav-mobile-icn-menu" :icon="['fal', 'bars']" @click="toggleMenuSidebar" />
     </nav>
 
-    <button class="btn-twitter-feed">
+    <button class="btn-twitter-feed"  @click="toggleTwitterSidebar">
       <font-awesome-icon :icon="['fab', 'twitter']" />
       <font-awesome-icon :icon="['fal', 'times-circle']" />
     </button>
