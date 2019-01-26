@@ -12,7 +12,7 @@
 
 <script>
 import navbar from '@/components/navbar'
-import menuSidebar from '@/components/menu-sidebar/menu-sidebar'
+import menuSidebar from '@/components/menu-sidebar'
 import twitterSidebar from '@/components/twitter-sidebar'
 
 export default {
