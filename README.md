@@ -19,3 +19,7 @@ npm run build
 ```
 npm run lint
 ```
+
+## Roadmap
+  - Use new Twitter Feed code
+  - Implement i18n for translations and translate to english
