@@ -1,0 +1,19 @@
+.c-portfolio {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: stretch;
+  @include media(md) {
+    justify-content: space-between;
+  }
+  .c-project {
+    flex: 1 1 100%;
+    margin-bottom: $space-big;
+    @include media(md) {
+      flex: 0 0 calc(50% - 15px);
+    }
+    @include media(lg) {
+      flex: 0 0 calc((100% / 3) - 15px);
+    }
+  }
+}

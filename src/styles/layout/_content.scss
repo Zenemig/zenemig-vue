@@ -1,7 +1,14 @@
 .l-content {
   margin-top: $space-biggest;
   padding: $space-big $space-regular;
+  @include media(md) {
+    padding: $space-big;
+  }
   @include media(lg) {
-    margin: 0 0 0 320px;
+    position: absolute;
+    top: 0;
+    left: 320px;
+    margin: 0;
+    padding: $space-big $space-big $space-big 0;
   }
 }

@@ -1,9 +1,8 @@
-.headline {
-  margin-bottom: 60px;
-  &.intro {
-    font-family: $font-display;
-  }
-  small {
-    font-family: $font-title;
+.c-headline {
+  margin-bottom: $space-big;
+  font-family: $font-display;
+  > small {
+    font-family: $font-body;
+    font-size: 16px;
   }
 }
