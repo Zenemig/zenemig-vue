@@ -20,7 +20,8 @@ import {
   faGlobeAmericas,
   faMobile,
   faEnvelope,
-  faTimes
+  faTimes,
+  faTags
 } from '@fortawesome/pro-light-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
@@ -39,6 +40,7 @@ library.add(faGlobeAmericas)
 library.add(faMobile)
 library.add(faEnvelope)
 library.add(faTimes)
+library.add(faTags)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
