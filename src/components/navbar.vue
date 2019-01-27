@@ -1,20 +1,23 @@
 <template>
-  <nav id="nav-mobile">
+  <div class="c-navbar">
     <img
+      class="c-navbar__logo"
       src="../assets/logo_zenemig.svg"
-      class="nav-mobile-logo"
       alt="Zenemig Logo"
       title="Zenemig Logo">
 
-    <font-awesome-icon
-      :icon="['fab', 'twitter']"
-      @click="toggleTwitterSidebar" />
+    <nav class="c-navbar__nav">
+      <font-awesome-icon
+        class="twitter"
+        :icon="['fab', 'twitter']"
+        @click="toggleTwitterSidebar" />
 
-    <font-awesome-icon
-      class="nav-mobile-icn-menu"
-      :icon="['fal', 'bars']"
-      @click="toggleMenuSidebar" />
-  </nav>
+      <font-awesome-icon
+        class="menu"
+        :icon="['fal', 'bars']"
+        @click="toggleMenuSidebar" />
+    </nav>
+  </div>
 </template>
 
 <script>
