@@ -4,7 +4,9 @@
 
     <menuSidebar :toggle-menu-sidebar="toggleMenuSidebar" :show="showMenuSidebar" />
 
-    <router-view/>
+    <main class="l-content">
+      <router-view/>
+    </main>
 
     <twitter-sidebar :toggle-twitter-sidebar="toggleTwitterSidebar" :show="showTwitterSidebar" />
   </div>
