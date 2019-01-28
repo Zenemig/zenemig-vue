@@ -1,14 +1,14 @@
 <template>
   <div id="app">
-    <navbar :toggle-menu-sidebar="toggleMenuSidebar" :toggle-twitter-sidebar="toggleTwitterSidebar" />
+    <navbar :toggle-menu-sidebar="toggleSidebar('menu')" :toggle-twitter-sidebar="toggleSidebar('twitter')" />
 
-    <menuSidebar :toggle-menu-sidebar="toggleMenuSidebar" :show="showMenuSidebar" />
+    <menuSidebar :toggle-menu-sidebar="toggleSidebar('menu')" :show="showMenuSidebar" />
 
     <main class="l-content">
       <router-view/>
     </main>
 
-    <twitter-sidebar :toggle-twitter-sidebar="toggleTwitterSidebar" :show="showTwitterSidebar" />
+    <twitter-sidebar :toggle-twitter-sidebar="toggleSidebar('twitter')" :show="showTwitterSidebar" />
   </div>
 </template>
 
@@ -30,11 +30,12 @@ export default {
     }
   },
   methods: {
-    toggleMenuSidebar: function () {
-      this.showMenuSidebar = !this.showMenuSidebar
-    },
-    toggleTwitterSidebar: function () {
-      this.showTwitterSidebar = !this.showTwitterSidebar
+    toggleSidebar: function (sidebar) {
+      if (sidebar === 'menu') {
+        this.showMenuSidebar = !this.showMenuSidebar
+      } else if (sidebar === 'twitter') {
+        this.showTwitterSidebar = !this.showTwitterSidebar
+      }
     }
   }
 }
