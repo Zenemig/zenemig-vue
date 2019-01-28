@@ -10,12 +10,12 @@
       <font-awesome-icon
         class="twitter"
         :icon="['fab', 'twitter']"
-        @click="toggleTwitterSidebar" />
+        @click="toggleSidebar('twitter')" />
 
       <font-awesome-icon
         class="menu"
         :icon="['fal', 'bars']"
-        @click="toggleMenuSidebar" />
+        @click="toggleSidebar('menu')" />
     </nav>
   </div>
 </template>
@@ -24,11 +24,7 @@
 export default {
   name: 'navbar',
   props: {
-    toggleMenuSidebar: {
-      type: Function,
-      required: true
-    },
-    toggleTwitterSidebar: {
+    toggleSidebar: {
       type: Function,
       required: true
     }

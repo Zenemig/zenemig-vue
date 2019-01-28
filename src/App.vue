@@ -1,14 +1,14 @@
 <template>
   <div id="app">
-    <navbar :toggle-menu-sidebar="toggleSidebar('menu')" :toggle-twitter-sidebar="toggleSidebar('twitter')" />
+    <navbar :toggle-sidebar="toggleSidebar" />
 
-    <menuSidebar :toggle-menu-sidebar="toggleSidebar('menu')" :show="showMenuSidebar" />
+    <menuSidebar :toggle-sidebar="toggleSidebar" :show="showMenuSidebar" />
 
     <main class="l-content">
       <router-view/>
     </main>
 
-    <twitter-sidebar :toggle-twitter-sidebar="toggleSidebar('twitter')" :show="showTwitterSidebar" />
+    <twitter-sidebar :toggle-sidebar="toggleSidebar" :show="showTwitterSidebar" />
   </div>
 </template>
 

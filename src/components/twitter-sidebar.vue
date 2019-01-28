@@ -2,13 +2,13 @@
   <aside
     class="l-sidebar l-sidebar--right c-twitter-sidebar"
     :class="{'active': show}">
-    <button class="l-sidebar__close" @click="toggleTwitterSidebar">
+    <button class="l-sidebar__close" @click="toggleSidebar('twitter')">
       <font-awesome-icon
         :icon="['fal', 'times-circle']"
       />
     </button>
 
-    <button class="c-twitter-sidebar__toggle-button"  @click="toggleTwitterSidebar">
+    <button class="c-twitter-sidebar__toggle-button"  @click="toggleSidebar('twitter')">
       <font-awesome-icon v-if="!show" :icon="['fab', 'twitter']" />
       <font-awesome-icon v-else :icon="['fal', 'times']" />
     </button>
@@ -36,7 +36,7 @@ export default {
       type: Boolean,
       required: true
     },
-    toggleTwitterSidebar: {
+    toggleSidebar: {
       type: Function,
       required: true
     }

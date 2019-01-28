@@ -2,7 +2,7 @@
   <aside
     class="l-sidebar l-sidebar--left c-menu-sidebar"
     :class="{'active': show}">
-    <button class="l-sidebar__close" @click="toggleMenuSidebar">
+    <button class="l-sidebar__close" @click="toggleSidebar('menu')">
       <font-awesome-icon
         :icon="['fal', 'times-circle']"
       />
@@ -78,7 +78,7 @@ export default {
       type: Boolean,
       required: true
     },
-    toggleMenuSidebar: {
+    toggleSidebar: {
       type: Function,
       required: true
     }
