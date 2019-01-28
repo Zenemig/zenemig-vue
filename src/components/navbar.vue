@@ -8,14 +8,14 @@
 
     <nav class="c-navbar__nav">
       <font-awesome-icon
-        class="twitter"
-        :icon="['fab', 'twitter']"
-        @click="toggleSidebar('twitter')" />
-
-      <font-awesome-icon
         class="menu"
-        :icon="['fal', 'bars']"
+        :icon="['fal', 'id-badge']"
         @click="toggleSidebar('menu')" />
+
+        <font-awesome-icon
+          class="twitter"
+          :icon="['fab', 'twitter']"
+          @click="toggleSidebar('twitter')" />
     </nav>
   </div>
 </template>

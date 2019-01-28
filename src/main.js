@@ -15,7 +15,7 @@ import {
 import {
   faHeart,
   faTimesCircle,
-  faBars,
+  faIdBadge,
   faBriefcase,
   faGlobeAmericas,
   faMobile,
@@ -34,7 +34,7 @@ library.add(faHtml5)
 library.add(faSkype)
 library.add(faHeart)
 library.add(faTimesCircle)
-library.add(faBars)
+library.add(faIdBadge)
 library.add(faBriefcase)
 library.add(faGlobeAmericas)
 library.add(faMobile)
