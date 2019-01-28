@@ -34,7 +34,7 @@ export default {
           },
           project: {
             name: 'Zenemig',
-            url: 'https://zenemig.net'
+            url: 'https://github.com/zenemig'
           }
         },
         {
