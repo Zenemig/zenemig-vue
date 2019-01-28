@@ -1,4 +1,5 @@
 .c-twitter-sidebar {
+  padding-top: $space-big;
   &__toggle-button {
     cursor: pointer;
     position: absolute;
@@ -23,5 +24,8 @@
       justify-content: center;
       align-items: center;
     }
+  }
+  &__feed {
+    margin-top: $space-regular;
   }
 }
