@@ -64,7 +64,7 @@ export default {
           },
           project: {
             name: 'EscaparArte',
-            url: 'http://www.clientes.zenemig.net/Merca/Escapararte/'
+            url: 'https://escapararte.netlify.com/'
           }
         },
         {
@@ -79,7 +79,7 @@ export default {
           },
           project: {
             name: 'Resostenido',
-            url: 'http://www.clientes.zenemig.net/Merca/Resostenido/'
+            url: 'https://resostenido.netlify.com/'
           }
         }
       ]
