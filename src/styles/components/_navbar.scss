@@ -13,6 +13,9 @@
   @include media(lg) {
     display: none;
   }
+  &.addBlur {
+    filter: blur(5px);
+  }
   &__logo {
     margin-left: $space-regular;
     height: 40px;

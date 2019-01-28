@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <navbar :toggle-sidebar="toggleSidebar" />
+    <navbar :toggle-sidebar="toggleSidebar" :class="{'addBlur': showMenuSidebar || showTwitterSidebar}" />
 
-    <menuSidebar :toggle-sidebar="toggleSidebar" :show="showMenuSidebar" />
+    <menuSidebar :toggle-sidebar="toggleSidebar" :show="showMenuSidebar" :class="{'addBlur': showTwitterSidebar}" />
 
-    <main class="l-content">
+    <main class="l-content" :class="{'addBlur': showMenuSidebar || showTwitterSidebar}">
       <router-view/>
     </main>
 

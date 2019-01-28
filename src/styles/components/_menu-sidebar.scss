@@ -1,4 +1,7 @@
 .c-menu-sidebar {
+  &.addBlur {
+    filter: blur(5px);
+  }
   &__logo {
     margin-bottom: $space-small;
     width: 150px;

@@ -1,6 +1,9 @@
 .l-content {
   margin-top: $space-biggest;
   padding: $space-big $space-regular;
+  &.addBlur {
+    filter: blur(5px);
+  }
   @include media(md) {
     padding: $space-big;
   }
