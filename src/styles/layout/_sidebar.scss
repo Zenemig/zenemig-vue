@@ -5,8 +5,8 @@
   display: block;
   position: fixed;
   top: 0;
-  overflow: scroll;
   width: 100%;
+  max-width: 320px;
   height: 100%;
   padding: $space-big $space-regular;
   background-color: $white;

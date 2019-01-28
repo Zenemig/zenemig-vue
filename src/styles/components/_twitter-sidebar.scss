@@ -1,5 +1,5 @@
 .c-twitter-sidebar {
-  padding-top: $space-big;
+  padding: 0 $space-regular;
   &__toggle-button {
     cursor: pointer;
     position: absolute;
@@ -25,7 +25,29 @@
       align-items: center;
     }
   }
+  &__header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    .l-sidebar__close {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+  }
+  &__title {
+    margin: 0;
+    font-size: 18px;
+    @include media(lg) {
+      padding: $space-regular 0;
+    }
+  }
   &__feed {
-    margin-top: $space-regular;
+    overflow: scroll;
+    height: 100%;
+    @include media(lg) {
+      padding-top: 0;
+    }
   }
 }
