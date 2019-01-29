@@ -21,5 +21,5 @@ npm run lint
 ```
 
 ## Roadmap
-  - Use new Twitter Feed code
   - Implement i18n for translations and translate to english
+  - Create a CMS admin panel to add new projects and manage content.
