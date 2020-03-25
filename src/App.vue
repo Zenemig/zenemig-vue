@@ -4,9 +4,7 @@
 
     <menuSidebar :toggle-sidebar="toggleSidebar" :show="showMenuSidebar" :class="{'addBlur': showTwitterSidebar}" />
 
-    <main class="l-content" :class="{'addBlur': showMenuSidebar || showTwitterSidebar}">
-      <router-view/>
-    </main>
+    <main class="l-content" :class="{'addBlur': showMenuSidebar || showTwitterSidebar}"></main>
 
     <twitter-sidebar :toggle-sidebar="toggleSidebar" :show="showTwitterSidebar" />
   </div>

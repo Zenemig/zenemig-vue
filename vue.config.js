@@ -4,7 +4,6 @@ module.exports = {
     extract: false
   },
 
-  baseUrl: undefined,
   outputDir: undefined,
   assetsDir: undefined,
   runtimeCompiler: undefined,
