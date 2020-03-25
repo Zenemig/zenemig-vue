@@ -6,13 +6,15 @@ $redopdark            : rgba($red, 0.8);
 $redoplight           : rgba($red, 0.2);
 
 // Blue
-$twitterblue          : #55acee;
-$darktwitterblue      : darken($twitterblue, 20%);
-$lighttwitterblue     : lighten($twitterblue, 20%);
 $linkedinblue         : #0077b5;
 $darklinkedinblue     : darken($linkedinblue, 20%);
 $lightlinkedinblue    : lighten($linkedinblue, 20%);
 $githubblue           : #4078c0;
+
+// Violet
+$instagramviolet          : #c13584;
+$darkinstagramviolet      : darken($instagramviolet, 20%);
+$lightinstagramviolet     : lighten($instagramviolet, 20%);
 
 // Green
 $mediumgreen          : #00ab6c;

@@ -14,7 +14,7 @@
 
         <font-awesome-icon
           class="twitter"
-          :icon="['fab', 'twitter']"
+          :icon="['fab', 'instagram']"
           @click="toggleSidebar('twitter')" />
     </nav>
   </div>

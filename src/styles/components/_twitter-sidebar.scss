@@ -1,5 +1,5 @@
 .c-twitter-sidebar {
-  padding: 0 $space-regular;
+  padding: 0;
   &__toggle-button {
     cursor: pointer;
     position: absolute;
@@ -12,17 +12,22 @@
     border: none;
     width: 30px;
     height: 30px;
-    background-color: $twitterblue;
+    background: #d6249f;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
     color: $white;
+    font-size: 16px;
     transition: background-color 0.3s linear;
     &:hover {
-      background-color: $darktwitterblue;
+      background-color: $darkinstagramviolet;
     }
     @include media(lg) {
       display: flex;
       flex-flow: row nowrap;
       justify-content: center;
       align-items: center;
+    }
+    @include media('1400px') {
+      display: none;
     }
   }
   &__header {
@@ -37,17 +42,25 @@
     }
   }
   &__title {
-    margin: 0;
-    font-size: 18px;
-    @include media(lg) {
-      padding: $space-regular 0;
+    margin: $space-regular;
+    padding: 0;
+    font-family: $font-body;
+    font-size: 16px;
+    a {
+      font-size: 18px;
     }
   }
   &__feed {
     overflow: scroll;
-    height: 100%;
+    height: calc(100% - 51px);
+    padding: 0 $space-smallest;
     @include media(lg) {
       padding-top: 0;
+    }
+  }
+  &.active {
+    .c-twitter-sidebar__toggle-button {
+      background: $red;
     }
   }
 }

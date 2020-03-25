@@ -18,23 +18,23 @@
       <a href="http://github.com/zenemig" class="social-icon github">
         <font-awesome-icon :icon="['fab', 'github']" />
       </a>
-      <a href="http://medium.com/@zenemig" class="social-icon medium">
-        <font-awesome-icon :icon="['fab', 'medium']" />
-      </a>
       <a href="http://linkedin.com/in/zenemig" class="social-icon linkedin">
         <font-awesome-icon :icon="['fab', 'linkedin']" />
+      </a>
+      <a href="http://instagram.com/zenemig" class="social-icon instagram">
+        <font-awesome-icon :icon="['fab', 'instagram']" />
       </a>
     </div>
 
     <div class="c-menu-sidebar__work">
       <h3 class="work__position">
-        Desarrollador Front-End
+        Front-End Developer
       </h3>
 
       <a
         class="work__company"
-        href="http://zenemig.net">
-        Freelance
+        href="mailto:hola@zenemig.net">
+        Available for Hire
       </a>
     </div>
 
@@ -54,18 +54,10 @@
         </div>
         hola@zenemig.net
       </a>
-
-      <a href="skype:zenemig13?chat" class="contact__item">
-        <div class="icon">
-          <font-awesome-icon
-            :icon="['fab', 'skype']" />
-        </div>
-        zenemig13
-      </a>
     </div>
 
     <div class="c-menu-sidebar__footer">
-      Hecho con <font-awesome-icon :icon="['fal', 'heart']" /> y <a href="https://vuejs.org/"><font-awesome-icon :icon="['fab', 'vuejs']" /></a>
+      Done with <font-awesome-icon :icon="['fal', 'heart']" /> and <a href="https://vuejs.org/"><font-awesome-icon :icon="['fab', 'vuejs']" /></a>
     </div>
   </aside>
 </template>

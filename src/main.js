@@ -10,7 +10,8 @@ import {
   faLinkedin,
   faTwitter,
   faHtml5,
-  faSkype
+  faSkype,
+  faInstagram
 } from '@fortawesome/free-brands-svg-icons'
 import {
   faHeart,
@@ -32,6 +33,7 @@ library.add(faLinkedin)
 library.add(faTwitter)
 library.add(faHtml5)
 library.add(faSkype)
+library.add(faInstagram)
 library.add(faHeart)
 library.add(faTimesCircle)
 library.add(faIdBadge)

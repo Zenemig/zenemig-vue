@@ -13,4 +13,10 @@
   @else if $media-query == lg {
     @media screen and (min-width: $lg)  { @content; }
   }
+  @else if $media-query == xl {
+    @media screen and (min-width: $xl)  { @content; }
+  }
+  @else {
+    @media screen and (min-width: $media-query)  { @content; }
+  }
 }

@@ -1,15 +1,10 @@
 .c-project {
   position: relative;
-  border-radius: 5px;
-  box-shadow: 0px 2px 5px $gray;
-  width: 100%;
-  max-width: 500px;
-  padding-bottom: 65px;
-  background-color: $lightergray;
+  background-color: transparent;
   &__img {
     overflow: hidden;
     position: relative;
-    border-radius: 5px 5px 0 0;
+    border-radius: 10px;
     margin-bottom: 5px;
     width: 100%;
     height: 200px;
@@ -45,22 +40,24 @@
         top: 70px;
       }
     }
-    &.manetch {
-      background-image: url('assets/manetch.jpg');
-    }
     &.zenemig {
       background-image: url('assets/zenemig.png');
     }
-    &.resostenido {
-      background-image: url('assets/resostenido.png');
+    &.leaflink {
+      background-image: url('assets/leaflink.png');
     }
-    &.escapararte {
-      background-image: url('assets/escapararte.png');
+    &.consorcio {
+      background-image: url('assets/consorcio.png');
+    }
+    &.ubiome {
+      background-image: url('assets/ubiome.jpeg');
+    }
+    &.manetch {
+      background-image: url('assets/manetch.jpg');
     }
   }
   &__tags {
     margin: $space-small 0;
-    padding: 0 $space-regular;
     font-size: 12px;
     .icon {
       margin-right: $space-smallest;
@@ -69,17 +66,13 @@
   }
   &__title {
     margin-bottom: $space-regular;
-    padding: 0 $space-regular;
   }
   &__description {
-    padding: 0 $space-regular;
     font-size: 16px;
     line-height: 21px;
   }
   &__footer {
-    position: absolute;
-    bottom: $space-small;
-    padding: 0 $space-regular;
+    margin: 0 0 $space-regular 0;
     font-size: 12px;
     .employer, .project-url {
       margin-bottom: $space-smallest;

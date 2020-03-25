@@ -14,4 +14,7 @@
     margin: 0;
     padding: $space-big $space-big $space-big 0;
   }
+  @include media('1400px') {
+    right: 320px;
+  }
 }

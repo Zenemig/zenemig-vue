@@ -3,7 +3,7 @@
     class="l-sidebar l-sidebar--right c-twitter-sidebar"
     :class="{'active': show}">
     <button class="c-twitter-sidebar__toggle-button"  @click="toggleSidebar('twitter')">
-      <font-awesome-icon v-if="!show" :icon="['fab', 'twitter']" />
+      <font-awesome-icon v-if="!show" :icon="['fab', 'instagram']" />
       <font-awesome-icon v-else :icon="['fal', 'times']" />
     </button>
 
@@ -12,6 +12,7 @@
         <a href="https://twitter.com/zenemig">
           @zenemig
         </a>
+        on <font-awesome-icon :icon="['fab', 'instagram']" />
       </h2>
 
       <button class="l-sidebar__close" @click="toggleSidebar('twitter')">
@@ -22,9 +23,10 @@
     </header>
 
     <div class="c-twitter-sidebar__feed">
-      <a class="twitter-timeline" href="https://twitter.com/zenemig?ref_src=twsrc%5Etfw">
+      <iframe src="//lightwidget.com/widgets/67517fd20fec591ca35a1bed9e1d2d53.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+      <!-- <a class="twitter-timeline" href="https://twitter.com/zenemig?ref_src=twsrc%5Etfw">
         Tweets by zenemig
-      </a>
+      </a> -->
     </div>
   </aside>
 </template>
