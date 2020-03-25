@@ -25,23 +25,25 @@ import {
 } from '@fortawesome/pro-light-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faVuejs)
-library.add(faMedium)
-library.add(faGithub)
-library.add(faLinkedin)
-library.add(faTwitter)
-library.add(faHtml5)
-library.add(faSkype)
-library.add(faInstagram)
-library.add(faHeart)
-library.add(faTimesCircle)
-library.add(faIdBadge)
-library.add(faBriefcase)
-library.add(faGlobeAmericas)
-library.add(faMobile)
-library.add(faEnvelope)
-library.add(faTimes)
-library.add(faTags)
+library.add(
+  faVuejs,
+  faMedium,
+  faGithub,
+  faLinkedin,
+  faTwitter,
+  faHtml5,
+  faSkype,
+  faInstagram,
+  faHeart,
+  faTimesCircle,
+  faIdBadge,
+  faBriefcase,
+  faGlobeAmericas,
+  faMobile,
+  faEnvelope,
+  faTimes,
+  faTags
+)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
