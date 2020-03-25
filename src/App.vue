@@ -4,19 +4,23 @@
 
     <menuSidebar :toggle-sidebar="toggleSidebar" :show="showMenuSidebar" :class="{'addBlur': showTwitterSidebar}" />
 
-    <main class="l-content" :class="{'addBlur': showMenuSidebar || showTwitterSidebar}"></main>
+    <main class="l-content" :class="{'addBlur': showMenuSidebar || showTwitterSidebar}">
+      <home />
+    </main>
 
     <twitter-sidebar :toggle-sidebar="toggleSidebar" :show="showTwitterSidebar" />
   </div>
 </template>
 
 <script>
+import home from '@/views/Home'
 import navbar from '@/components/navbar'
 import menuSidebar from '@/components/menu-sidebar'
 import twitterSidebar from '@/components/twitter-sidebar'
 
 export default {
   components: {
+    home,
     navbar,
     menuSidebar,
     twitterSidebar
