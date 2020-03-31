@@ -1,9 +1,10 @@
 <template>
   <section
-    class="v-home">
+    class="v-home"
+    v-editable="blok">
     <h1 class="c-headline">
-      Hi, I'm Matías Giménez, from Chile
-      <br><small>Father to Amelia ({{ age(26, 2, 2009) }}) and Lucca ({{ age(30, 12, 2015) }}), Front-End Developer and a very amateur photographer</small>
+      {{ blok.title }}
+      <br><small>{{ getDescriptionWithAges }}</small>
     </h1>
 
     <div class="c-portfolio">
@@ -99,9 +100,30 @@ export default {
   components: {
     project
   },
+  props: {
+    blok: {
+      type: Object,
+      required: true
+    }
+  },
   data: () => {
     return {
       projects: portfolio
+    }
+  },
+  computed: {
+    getDescriptionWithAges () {
+      const array = this.blok.description.split(' ')
+      const formatedArray = array.map(word => {
+        if (word === 'Amelia') {
+          word = `Amelia (${this.age(26, 2, 2009)})`
+        }
+        if (word === 'Lucca,') {
+          word = `Lucca (${this.age(30, 12, 2015)}),`
+        }
+        return word
+      })
+      return formatedArray.join(' ')
     }
   },
   methods: {
@@ -117,7 +139,7 @@ export default {
       if (currentMonth === monthBorn && currentDay - dayBorn < 0) {
         return currentYear - yearBorn
       }
-      return currentYear - yearBorn - 1
+      return currentYear - yearBorn
     }
   }
 }
