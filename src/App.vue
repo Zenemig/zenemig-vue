@@ -6,7 +6,7 @@
 
     <menu-sidebar
       v-if="sidebarContent.content"
-      :blok="sidebarContent.content"
+      :content="sidebarContent.content"
       :toggle-sidebar="toggleSidebar"
       :show="showMenuSidebar"
       :class="{'addBlur': showTwitterSidebar}" />
@@ -16,7 +16,8 @@
       class="l-content">
       <home
         v-if="mainContent.content"
-        :blok="mainContent.content" />
+        :content="mainContent.content"
+        :projects="projects" />
     </main>
 
     <twitter-sidebar
@@ -44,6 +45,7 @@ export default {
     return {
       mainContent: {},
       sidebarContent: {},
+      projects: {},
       showMenuSidebar: false,
       showTwitterSidebar: false
     }
@@ -61,22 +63,26 @@ export default {
     })
   },
   methods: {
-    getContent (slug, version) {
+    getContent (version) {
       axios
-        .all([this.getMainContent(slug, version), this.getSidebarContent(slug, version)])
-        .then(axios.spread( (mainContent, sidebarContent) => {
+        .all([this.getMainContent(version), this.getSidebarContent(version), this.getProjects(version)])
+        .then(axios.spread( (mainContent, sidebarContent, projects) => {
           this.mainContent = mainContent.data.story
           this.sidebarContent = sidebarContent.data.story
+          this.projects = projects.data.stories
         }))
         .catch( error => {
           console.log(error);
         })
     },
-    getMainContent (slug, version) {
+    getMainContent (version) {
       return axios.get('https://api.storyblok.com/v1/cdn/stories/main-content?version=' + version + '&token=' + process.env.VUE_APP_STORYBLOK_ACCESS_TOKEN)
     },
-    getSidebarContent (slug, version) {
-      return axios.get('https://api.storyblok.com/v1/cdn/spaces/zenemig/stories/sidebar?version=' + version + '&token=' + process.env.VUE_APP_STORYBLOK_ACCESS_TOKEN)
+    getSidebarContent (version) {
+      return axios.get('https://api.storyblok.com/v1/cdn/stories/sidebar?version=' + version + '&token=' + process.env.VUE_APP_STORYBLOK_ACCESS_TOKEN)
+    },
+    getProjects (version) {
+      return axios.get(`https://api.storyblok.com/v1/cdn/stories?starts_with=projects/&sort_by=first_published_at:desc&version=${version}&token=${process.env.VUE_APP_STORYBLOK_ACCESS_TOKEN}`)
     },
     toggleSidebar: (sidebar) => {
       if (sidebar === 'menu') {

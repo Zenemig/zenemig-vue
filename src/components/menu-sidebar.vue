@@ -1,6 +1,6 @@
 <template>
   <aside
-    v-editable="blok"
+    v-editable="content"
     class="l-sidebar l-sidebar--left c-menu-sidebar"
     :class="{'active': show}">
     <button class="l-sidebar__close" @click="toggleSidebar('menu')">
@@ -11,36 +11,36 @@
 
     <img
       class="c-menu-sidebar__logo"
-      :src="blok.zenemig_logo"
+      :src="content.zenemig_logo"
       alt="Zenemig Logo"
       title="Zenemig Logo">
 
     <div class="c-menu-sidebar__social">
-      <a :href="blok.github_url.url" class="social-icon github">
+      <a :href="content.github_url.url" class="social-icon github">
         <font-awesome-icon :icon="['fab', 'github']" />
       </a>
-      <a :href="blok.linkedin_url.url" class="social-icon linkedin">
+      <a :href="content.linkedin_url.url" class="social-icon linkedin">
         <font-awesome-icon :icon="['fab', 'linkedin']" />
       </a>
-      <a :href="blok.instagram_url.url" class="social-icon instagram">
+      <a :href="content.instagram_url.url" class="social-icon instagram">
         <font-awesome-icon :icon="['fab', 'instagram']" />
       </a>
     </div>
 
     <div class="c-menu-sidebar__work">
       <h3 class="work__position">
-        {{ blok.current_position }}
+        {{ content.current_position }}
       </h3>
 
       <a
         class="work__company"
-        :href="blok.company_url.url">
-        {{ blok.company_name }}
+        :href="content.company_url.url">
+        {{ content.company_name }}
       </a>
     </div>
 
     <div class="c-menu-sidebar__contact">
-      <a :href="`tel:${blok.phone_number}`" class="contact__item">
+      <a :href="`tel:${content.phone_number}`" class="contact__item">
         <div class="icon">
           <font-awesome-icon
             :icon="['fal', 'mobile']" />
@@ -67,7 +67,7 @@
 export default {
   name: 'menuSidebar',
   props: {
-    blok: {
+    content: {
       type: Object,
       required: true
     },
@@ -82,7 +82,7 @@ export default {
   },
   computed: {
     getFormatedNumber () {
-      const number = this.blok.phone_number
+      const number = this.content.phone_number
       const numberArr = number.split('')
       numberArr.splice(3, 0, ' ')
       numberArr.splice(5, 0, ' ')
