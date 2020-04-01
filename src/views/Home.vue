@@ -31,11 +31,6 @@ export default {
       required: true
     }
   },
-  data: () => {
-    return {
-      // projects: portfolio
-    }
-  },
   computed: {
     getDescriptionWithAges () {
       const array = this.content.description.split(' ')

@@ -27,6 +27,7 @@
 </template>
 
 <script>
+import storyblok from '@/api'
 import axios from 'axios'
 import home from '@/views/Home'
 import navbar from '@/components/navbar'
@@ -45,7 +46,7 @@ export default {
     return {
       mainContent: {},
       sidebarContent: {},
-      projects: {},
+      projects: [],
       showMenuSidebar: false,
       showTwitterSidebar: false
     }
@@ -64,25 +65,36 @@ export default {
   },
   methods: {
     getContent (version) {
-      axios
-        .all([this.getMainContent(version), this.getSidebarContent(version), this.getProjects(version)])
-        .then(axios.spread( (mainContent, sidebarContent, projects) => {
+      this.getMainContent(version)
+        .then(mainContent => {
           this.mainContent = mainContent.data.story
+        })
+        .catch(error => {
+          console.throw(error)
+        })
+      this.getSidebarContent(version)
+        .then(sidebarContent => {
           this.sidebarContent = sidebarContent.data.story
+        })
+        .catch(error => {
+          console.throw(error)
+        })
+      this.getProjects(version)
+        .then(projects => {
           this.projects = projects.data.stories
-        }))
-        .catch( error => {
-          console.log(error);
+        })
+        .catch(error => {
+          console.throw(error)
         })
     },
     getMainContent (version) {
-      return axios.get('https://api.storyblok.com/v1/cdn/stories/main-content?version=' + version + '&token=' + process.env.VUE_APP_STORYBLOK_ACCESS_TOKEN)
+      return storyblok.get(`/main-content?version=${version}`)
     },
     getSidebarContent (version) {
-      return axios.get('https://api.storyblok.com/v1/cdn/stories/sidebar?version=' + version + '&token=' + process.env.VUE_APP_STORYBLOK_ACCESS_TOKEN)
+      return storyblok.get(`/sidebar?version=${version}`)
     },
     getProjects (version) {
-      return axios.get(`https://api.storyblok.com/v1/cdn/stories?starts_with=projects/&sort_by=first_published_at:desc&version=${version}&token=${process.env.VUE_APP_STORYBLOK_ACCESS_TOKEN}`)
+      return storyblok.get(`?starts_with=projects/&sort_by=first_published_at:desc&version=${version}`)
     },
     toggleSidebar: (sidebar) => {
       if (sidebar === 'menu') {
