@@ -1,19 +1,33 @@
 <template>
-  <section
-    class="v-home"
-    v-editable="content">
-    <h1 class="c-headline">
-      {{ content.title }}
-      <br><small>{{ getDescriptionWithAges }}</small>
-    </h1>
+  <div>
+    <section  v-if="loading">
+      <h1 class="c-headline c-headline--loading">
+        <div class="title" />
+        <div class="description" />
+      </h1>
 
-    <div class="c-portfolio">
-      <project
-        v-for="project in projects"
-        :key="project.title" :project="project.content"
-        :locale="locale"/>
-    </div>
-  </section>
+      <div class="c-portfolio">
+        <project
+          v-for="index in 5"
+          :key="index"
+          :loading="true"/>
+      </div>
+    </section>
+
+    <section  v-else>
+      <h1 v-editable="content" class="c-headline">
+        {{ content.title }}
+        <small>{{ getDescriptionWithAges }}</small>
+      </h1>
+
+      <div class="c-portfolio">
+        <project
+          v-for="project in projects"
+          :key="project.title" :project="project.content"
+          :locale="locale"/>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -25,17 +39,17 @@ export default {
     project
   },
   props: {
+    loading: {
+      type: Boolean
+    },
     locale: {
-      types: String,
-      required: true
+      type: String
     },
     content: {
-      type: Object,
-      required: true
+      type: Object
     },
     projects: {
-      type: Array,
-      required: true
+      type: Array
     }
   },
   computed: {

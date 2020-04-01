@@ -6,7 +6,7 @@
       @changeLocale="locale = $event" />
 
     <menu-sidebar
-      v-if="sidebarContent.content"
+      v-if="sidebarReady"
       :locale="locale"
       :content="sidebarContent.content"
       :toggle-sidebar="toggleSidebar"
@@ -14,14 +14,22 @@
       :class="{'addBlur': showTwitterSidebar}"
       @changeLocale="locale = $event" />
 
+    <menu-sidebar
+      v-else
+      :loading="true" />
+
     <main
       :class="{'addBlur': showMenuSidebar || showTwitterSidebar}"
       class="l-content">
       <home
-        v-if="mainContent.content"
+        v-if="mainReady && projectsReady"
         :locale="locale"
         :content="mainContent.content"
         :projects="projects" />
+
+      <home
+        v-else
+        :loading="true" />
     </main>
 
     <twitter-sidebar
@@ -50,8 +58,11 @@ export default {
     return {
       locale: 'en',
       mainContent: {},
+      mainReady: false,
       sidebarContent: {},
+      sidebarReady: false,
       projects: [],
+      projectsReady: false,
       showMenuSidebar: false,
       showTwitterSidebar: false
     }
@@ -81,6 +92,7 @@ export default {
       this.getMainContent(version)
         .then(mainContent => {
           this.mainContent = mainContent.data.story
+          this.mainReady = true
         })
         .catch(error => {
           console.log(error)
@@ -88,6 +100,7 @@ export default {
       this.getSidebarContent(version)
         .then(sidebarContent => {
           this.sidebarContent = sidebarContent.data.story
+          this.sidebarReady = true
         })
         .catch(error => {
           console.log(error)
@@ -95,6 +108,7 @@ export default {
       this.getProjects(version)
         .then(projects => {
           this.projects = projects.data.stories
+          this.projectsReady = true
         })
         .catch(error => {
           console.log(error)
