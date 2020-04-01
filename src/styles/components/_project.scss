@@ -4,8 +4,9 @@
   &__img {
     overflow: hidden;
     position: relative;
+    margin-bottom: $space-small;
     border-radius: 10px;
-    margin-bottom: 5px;
+    box-shadow: 0 2px 2px 0 lighten(black, 80%);
     width: 100%;
     height: 200px;
     background-size: cover;
@@ -40,21 +41,21 @@
         top: 70px;
       }
     }
-    &.zenemig {
-      background-image: url('assets/zenemig.png');
-    }
-    &.leaflink {
-      background-image: url('assets/leaflink.png');
-    }
-    &.modyo {
-      background-image: url('assets/consorcio.png');
-    }
-    &.ubiome {
-      background-image: url('assets/ubiome.jpeg');
-    }
-    &.manetch {
-      background-image: url('assets/manetch.jpg');
-    }
+    // &.zenemig {
+    //   background-image: url('assets/zenemig.png');
+    // }
+    // &.leaflink {
+    //   background-image: url('assets/leaflink.png');
+    // }
+    // &.modyo {
+    //   background-image: url('assets/consorcio.png');
+    // }
+    // &.ubiome {
+    //   background-image: url('assets/ubiome.jpeg');
+    // }
+    // &.manetch {
+    //   background-image: url('assets/manetch.jpg');
+    // }
   }
   &__tags {
     margin: $space-small 0;
@@ -79,6 +80,48 @@
       .icon {
         margin-right: $space-smallest;
       }
+    }
+  }
+}
+
+.c-project--loading {
+  .c-project__img {
+    border-radius: 10px;
+    width: 100%;
+    height: 200px;
+    background-color: lighten(black, 90%);
+  }
+  .c-project__tags {
+    width: 60%;
+    max-width: 300px;
+    height: 15px;
+    background-color: lighten(black, 90%);
+  }
+  .c-project__title {
+    width: 100%;
+    max-width: 300px;
+    height: 30px;
+    background-color: lighten(black, 90%);
+  }
+  .c-project__description {
+    margin-bottom: $space-smallest;
+    width: 100%;
+    height: 15px;
+    background-color: lighten(black, 90%);
+  }
+  .c-project__footer {
+    margin-top: $space-small;
+    .employer {
+      width: 40%;
+      max-width: 300px;
+      height: 15px;
+      background-color: lighten(black, 90%);
+    }
+    .project-url {
+      width: 30%;
+      max-width: 250px;
+      height: 15px;
+      background-color: lighten(black, 90%);
     }
   }
 }

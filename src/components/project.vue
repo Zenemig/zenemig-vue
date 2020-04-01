@@ -1,51 +1,73 @@
 <template>
-  <article class="c-project">
-    <div class="c-project__tags">
-      <font-awesome-icon :icon="['fal', 'tags']" class="icon" /> {{ project.tags }}
-    </div>
+  <div>
+    <article v-if="loading" class="c-project c-project--loading">
+      <div class="c-project__tags" />
 
-    <div class="c-project__img" :class="project.client_name.toLowerCase()">
-      <div class="h-overlay-black-medium" />
-      <div class="c-project__icon">
-        <font-awesome-icon :icon="['fab', project.main_tech]" />
-      </div>
-    </div>
+      <div class="c-project__img" />
 
-    <div class="c-project__footer">
-      <div class="employer">
-        <font-awesome-icon :icon="['fal', 'briefcase']" class="icon" /> {{ translateText('client') }}:
-        <a :href="project.client_url.url">
-          {{ project.client_name }}
-        </a>
+      <div class="c-project__footer">
+        <div class="employer" />
+
+        <div class="project-url" />
       </div>
 
-      <div class="project-url">
-        <font-awesome-icon :icon="['fal', 'globe-americas']" class="icon" />
-        <a :href="project.project_url.url">
-          {{ translateText('visitTheProject') }}
-        </a>
+      <h2 class="c-project__title" />
+
+      <div class="c-project__description" />
+      <div class="c-project__description" />
+      <div class="c-project__description" />
+      <div class="c-project__description" />
+    </article>
+
+    <article v-else class="c-project">
+      <div class="c-project__tags">
+        <font-awesome-icon :icon="['fal', 'tags']" class="icon" /> {{ project.tags }}
       </div>
-    </div>
 
-    <h2 class="c-project__title">
-      {{ project.title }}
-    </h2>
+      <div class="c-project__img" :style="`background-image: url(${project.image})`">
+        <div class="h-overlay-black-medium" />
+        <div class="c-project__icon">
+          <font-awesome-icon :icon="['fab', project.main_tech]" />
+        </div>
+      </div>
 
-    <p v-html="getDescription(project.description.content[0].content)" class="c-project__description" />
-  </article>
+      <div class="c-project__footer">
+        <div class="employer">
+          <font-awesome-icon :icon="['fal', 'briefcase']" class="icon" /> {{ translateText('client') }}:
+          <a :href="project.client_url.url">
+            {{ project.client_name }}
+          </a>
+        </div>
+
+        <div class="project-url">
+          <font-awesome-icon :icon="['fal', 'globe-americas']" class="icon" />
+          <a :href="project.project_url.url">
+            {{ translateText('visitTheProject') }}
+          </a>
+        </div>
+      </div>
+
+      <h2 class="c-project__title">
+        {{ project.title }}
+      </h2>
+
+      <p v-html="getDescription(project.description.content[0].content)" class="c-project__description" />
+    </article>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'project',
   props: {
+    loading: {
+      type: Boolean
+    },
     locale: {
-      types: String,
-      required: true
+      type: String
     },
     project: {
-      type: Object,
-      required: true
+      type: Object
     }
   },
   methods: {

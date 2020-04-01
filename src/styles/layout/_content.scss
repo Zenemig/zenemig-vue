@@ -12,9 +12,11 @@
     top: 0;
     left: 320px;
     margin: 0;
+    width: calc(100% - 320px);
     padding: $space-big $space-big $space-big 0;
   }
   @include media('1400px') {
     right: 320px;
+    width: calc(100% - 640px);
   }
 }

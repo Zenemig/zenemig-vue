@@ -3,7 +3,7 @@
   flex-flow: row wrap;
   justify-content: flex-start;
   align-items: stretch;
-  .c-project {
+  > div {
     flex: 1 1 320px;
     margin: $space-regular;
     @include media('1650px') {

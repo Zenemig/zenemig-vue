@@ -102,3 +102,53 @@
     }
   }
 }
+
+.c-menu-sidebar--loading {
+  .c-menu-sidebar__logo {
+    border-radius: 50%;
+    margin: 0 auto $space-small auto;
+    width: 200px;
+    height: 200px;
+    background-color: lighten(black, 90%);
+  }
+  .c-menu-sidebar__social {
+    .icon {
+      border-radius: 5px;
+      width: 30px;
+      height: 30px;
+      margin: $space-smallest;
+      background-color: lighten(black, 90%);
+    }
+  }
+  .c-menu-sidebar__work {
+    .work__position {
+      width: 100%;
+      height: 30px;
+      background-color: lighten(black, 90%);
+    }
+    .work__company {
+      margin: 0 auto;
+      width: 60%;
+      height: 20px;
+      background-color: lighten(black, 90%);
+    }
+  }
+  .c-menu-sidebar__contact {
+    .item {
+      margin: 0 auto $space-small auto;
+      width: 75%;
+      height: 25px;
+      background-color: lighten(black, 90%);
+    }
+  }
+  .c-menu-sidebar__footer {
+    .item {
+      width: 45%;
+      height: 15px;
+      background-color: lighten(black, 90%);
+      &:last-child {
+        width: 25%;
+      }
+    }
+  }
+}
