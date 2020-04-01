@@ -8,7 +8,10 @@
     </h1>
 
     <div class="c-portfolio">
-      <project v-for="project in projects" :key="project.title" :project="project.content" />
+      <project
+        v-for="project in projects"
+        :key="project.title" :project="project.content"
+        :locale="locale"/>
     </div>
   </section>
 </template>
@@ -22,6 +25,10 @@ export default {
     project
   },
   props: {
+    locale: {
+      types: String,
+      required: true
+    },
     content: {
       type: Object,
       required: true

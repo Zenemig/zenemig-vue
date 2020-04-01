@@ -57,9 +57,18 @@
       </a>
     </div>
 
-    <div class="c-menu-sidebar__footer">
-      Done with <font-awesome-icon :icon="['fal', 'heart']" /> and <a href="https://vuejs.org/"><font-awesome-icon :icon="['fab', 'vuejs']" /></a>
-    </div>
+    <footer class="c-menu-sidebar__footer">
+      <div v-if="locale === 'es'">
+        Hecho con <font-awesome-icon :icon="['fal', 'heart']" /> y <a href="https://vuejs.org/"><font-awesome-icon :icon="['fab', 'vuejs']" /></a>
+      </div>
+      <div v-else>
+        Done with <font-awesome-icon :icon="['fal', 'heart']" /> and <a href="https://vuejs.org/"><font-awesome-icon :icon="['fab', 'vuejs']" /></a>
+      </div>
+
+      <div>
+        <button @click="$emit('changeLocale', 'es')">Esp</button> | <button @click="$emit('changeLocale', 'en')">Eng</button>
+      </div>
+    </footer>
   </aside>
 </template>
 
@@ -67,6 +76,10 @@
 export default {
   name: 'menuSidebar',
   props: {
+    locale: {
+      types: String,
+      required: true
+    },
     content: {
       type: Object,
       required: true
@@ -89,6 +102,6 @@ export default {
       numberArr.splice(10, 0, ' ')
       return numberArr.join('')
     }
-  }
+  },
 }
 </script>

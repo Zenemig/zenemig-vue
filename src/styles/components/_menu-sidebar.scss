@@ -81,5 +81,24 @@
     > a, > a:hover {
       color: $gray;
     }
+    button {
+      display: none;
+      cursor: pointer;
+      background: none;
+      border: none;
+      text-decoration: underline;
+      outline: none;
+    }
+  }
+}
+
+@include media(lg) {
+  .c-menu-sidebar__footer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    button {
+      display: inline-block;
+    }
   }
 }

@@ -12,10 +12,15 @@
         :icon="['fal', 'id-badge']"
         @click="toggleSidebar('menu')" />
 
-        <font-awesome-icon
-          class="twitter"
-          :icon="['fab', 'instagram']"
-          @click="toggleSidebar('twitter')" />
+      <font-awesome-icon
+        class="twitter"
+        :icon="['fab', 'instagram']"
+        @click="toggleSidebar('twitter')" />
+
+      <div>
+        <button @click="$emit('changeLocale', 'es')">Esp</button> |
+        <button @click="$emit('changeLocale', 'en')">Eng</button>
+      </div>
     </nav>
   </div>
 </template>
