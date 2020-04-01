@@ -21,6 +21,7 @@
     height: 40px;
   }
   &__nav {
+    display: flex;
     color: $red;
     .twitter, .menu {
       cursor: pointer;
@@ -29,6 +30,13 @@
     }
     .twitter {
       color: $instagramviolet;
+    }
+    button {
+      cursor: pointer;
+      background: none;
+      border: none;
+      text-decoration: underline;
+      outline: none;
     }
   }
 }

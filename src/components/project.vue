@@ -14,7 +14,9 @@
 
     <div class="c-project__footer">
       <div class="employer">
-        <font-awesome-icon :icon="['fal', 'briefcase']" class="icon" /> Client:
+        <font-awesome-icon :icon="['fal', 'briefcase']" class="icon" />
+        <span v-if="locale === 'es'">Cliente:</span>
+        <span v-else>Client:</span>
         <a :href="project.client_url.url">
           {{ project.client_name }}
         </a>
@@ -23,7 +25,8 @@
       <div class="project-url">
         <font-awesome-icon :icon="['fal', 'globe-americas']" class="icon" />
         <a :href="project.project_url.url">
-          Visit the Project
+          <span v-if="locale === 'es'">Visita el Proyecto</span>
+          <span v-else>Visit the Project</span>
         </a>
       </div>
     </div>
@@ -40,6 +43,10 @@
 export default {
   name: 'project',
   props: {
+    locale: {
+      types: String,
+      required: true
+    },
     project: {
       type: Object,
       required: true
