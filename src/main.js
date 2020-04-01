@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import store from './store'
+import StoryblokVue from 'storyblok-vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faVuejs,
@@ -47,9 +47,10 @@ library.add(
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
+Vue.use(StoryblokVue)
+
 Vue.config.productionTip = false
 
 new Vue({
-  store,
   render: h => h(App)
 }).$mount('#app')
