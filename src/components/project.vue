@@ -1,6 +1,5 @@
 <template>
   <article class="c-project">
-
     <div class="c-project__tags">
       <font-awesome-icon :icon="['fal', 'tags']" class="icon" /> {{ project.tags }}
     </div>
@@ -14,9 +13,7 @@
 
     <div class="c-project__footer">
       <div class="employer">
-        <font-awesome-icon :icon="['fal', 'briefcase']" class="icon" />
-        <span v-if="locale === 'es'">Cliente:</span>
-        <span v-else>Client:</span>
+        <font-awesome-icon :icon="['fal', 'briefcase']" class="icon" /> {{ translateText('client') }}:
         <a :href="project.client_url.url">
           {{ project.client_name }}
         </a>
@@ -25,8 +22,7 @@
       <div class="project-url">
         <font-awesome-icon :icon="['fal', 'globe-americas']" class="icon" />
         <a :href="project.project_url.url">
-          <span v-if="locale === 'es'">Visita el Proyecto</span>
-          <span v-else>Visit the Project</span>
+          {{ translateText('visitTheProject') }}
         </a>
       </div>
     </div>
@@ -53,6 +49,9 @@ export default {
     }
   },
   methods: {
+    translateText (textName) {
+      return this.translations[textName][this.locale]
+    },
     getDescription (array) {
       let html = ''
       array.forEach(item => {
